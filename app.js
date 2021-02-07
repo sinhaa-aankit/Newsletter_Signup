@@ -19,11 +19,23 @@ app.get("/", function(req, res){
 
 app.post("/", function(req,res){
 
-	var firstName = req.body.fName;
-	var lastName = req.body.lName;
-	var email = req.body.Email;
+	const firstName = req.body.fName;
+	const lastName = req.body.lName;
+	const email = req.body.Email;
 
-	
+	var data = {
+
+		members : {
+			email_address: email,
+			status: "subscribed",
+			merge_fields:{
+				FNAME: firstName,
+				LNAME: lastName
+			}
+		}
+		
+	}
+
 
 });
 
