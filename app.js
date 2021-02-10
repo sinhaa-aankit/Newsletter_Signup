@@ -40,14 +40,21 @@ app.post("/", function(req,res){
 
 	const jsonData = JSON.stringify(data);
 
-	const url = "https://us7.api.mailchimp.com/3.0/lists/5ceec9<ankit>172f";
+	const url = "https://us7.api.mailchimp.com/3.0/lists/5ceec917<ankit>2f";
 	
 	const options = {
 		method: "POST",
-		auth: "ankit:fe36518e8177c3<ankit>6e1c93e2c2430a2383-us7"
+		auth: "ankit:fe36518e817<ankit>7c36e1c93e2c2430a2383-us7"
 	}
 
 	const request = https.request(url, options, function(response){
+
+
+		if(response.statusCode === 200){
+			res.sendFile(__dirname + "/success.html");
+		}else{
+			res.sendFile(__dirname + "/failure.html");
+		}
 
 		response.on("data", function(data){
 			console.log(JSON.parse(data));
