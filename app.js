@@ -1,5 +1,5 @@
 //jshint esversion: 6 
-// REMOVE <ankit> from url and apis. Mailchimp doent allow API's to be posted on GitHub 
+// REMOVE <ankit> from url and apis. Mailchimp doesn't allow API's to be posted on GitHub 
 
 const express = require("express");
 const https = require("https");
